@@ -1,0 +1,123 @@
+Test of Backend
+
+GET
+http://localhost:9080/user
+Status - 200: OK
+List of Users: {"keys": []}
+
+POST
+http://localhost:9080/user
+name: Test
+Status - 200: OK
+Added User: {"key": 5838406743490560, "name": "Test", "colors": []}
+
+GET
+http://localhost:9080/user
+Status - 200: OK
+List of Users: {"keys": [5838406743490560]}
+
+GET
+http://localhost:9080/user/5838406743490560
+Status - 200: OK
+User: {"key": 5838406743490560, "name": "Test", "colors": []}
+
+PUT
+http://localhost:9080/user
+ID: 5838406743490560
+name: PUT Test
+Status - 200: OK
+Updated User: {"key": 5838406743490560, "name": "PUT Test", "colors": []}
+
+GET
+http://localhost:9080/user/5838406743490560
+Status - 200: OK
+User: {"key": 5838406743490560, "name": "PUT Test", "colors": []}
+
+GET
+http://localhost:9080/color
+Status - 200: OK
+List of Colors: {"keys": []}
+
+POST
+http://localhost:9080/color
+userID: 5838406743490560
+title: Test Color
+value: 10
+Status - 200: OK
+Added Color: {"title": "Test Color", "value": 10, "key": 5275456790069248, "userID": 5838406743490560}
+
+GET
+http://localhost:9080/color
+Status - 200: OK
+List of Colors: {"keys": [5275456790069248]}
+
+GET
+http://localhost:9080/color/5275456790069248
+Status - 200: OK
+Color: {"title": "Test Color", "value": 10, "key": 5275456790069248, "userID": 5838406743490560}
+
+GET
+http://localhost:9080/user/5838406743490560
+Status - 200: OK
+User: {"colors": [5275456790069248], "name": "PUT Test", "key": 5838406743490560}
+
+PUT
+http://localhost:9080/color/
+ID: 5275456790069248
+title: New Test Color
+value: 25
+Status - 200: OK
+Updated Color: {"title": "New Test Color", "value": 25, "key": 5275456790069248, "userID": 5838406743490560}
+
+GET
+http://localhost:9080/color/5275456790069248
+Status - 200: OK
+Color: {"value": 25, "userID": 5838406743490560, "key": 5275456790069248, "title": "New Test Color"}
+
+POST
+http://localhost:9080/color
+userID: 5838406743490560
+title: Second Color
+value: 100
+Status - 200: OK
+Added Color: {"value": 100, "userID": 5838406743490560, "key": 6401356696911872, "title": "Second Color"}
+
+GET
+http://localhost:9080/color
+Status - 200: OK
+List of Colors: {"keys": [5275456790069248, 6401356696911872]}
+
+GET
+http://localhost:9080/color/6401356696911872
+Status - 200: OK
+Color: {"value": 100, "userID": 5838406743490560, "key": 6401356696911872, "title": "Second Color"}
+
+DELETE
+http://localhost:9080/color/5275456790069248
+Status - 200: OK
+Deleted Color: {"value": 25, "userID": 5838406743490560, "key": 5275456790069248, "title": "New Test Color"}
+
+GET
+http://localhost:9080/color
+Status - 200: OK
+List of Colors: {"keys": [6401356696911872]}
+
+GET
+http://localhost:9080/user/5838406743490560
+Status - 200: OK
+User: {"key": 5838406743490560, "name": "PUT Test", "colors": [6401356696911872]}
+
+DELETE
+http://localhost:9080/user/5838406743490560
+Status - 200: OK
+Deleted User: {"key": 5838406743490560, "name": "PUT Test", "colors": [6401356696911872]}
+
+GET
+http://localhost:9080/user
+Status - 200: OK
+List of Users: {"keys": []}
+
+GET
+http://localhost:9080/color
+Status - 200: OK
+List of Colors: {"keys": []}

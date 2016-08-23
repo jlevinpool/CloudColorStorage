@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/item_color_info_rL_layout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="colorKey"
+        android:id="@+id/item_color_info_tV_colorKey"
+        android:textSize="10dp"
+        android:layout_alignBottom="@+id/item_color_info_tV_colorValue"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="colorTitle"
+        android:id="@+id/item_color_info_tV_colorTitle"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/item_color_info_frame_ColorSample"
+        android:layout_toRightOf="@+id/item_color_info_frame_ColorSample"
+        android:layout_toEndOf="@+id/item_color_info_frame_ColorSample"
+        android:layout_marginLeft="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="colorValue"
+        android:id="@+id/item_color_info_tV_colorValue"
+        android:layout_below="@+id/item_color_info_tV_colorTitle"
+        android:layout_alignLeft="@+id/item_color_info_tV_colorTitle"
+        android:layout_alignStart="@+id/item_color_info_tV_colorTitle"
+        android:textSize="14dp" />
+
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right|center_vertical"
+        android:id="@+id/item_color_info_frame_ColorSample"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="25dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:id="@+id/item_color_info_image_ColorB"
+            android:background="#444444" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:id="@+id/item_color_info_image_ColorF"
+            android:layout_margin="2dp"
+            android:background="#ff0606" />
+    </FrameLayout>
+
+</RelativeLayout>

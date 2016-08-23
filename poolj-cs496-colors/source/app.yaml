@@ -1,0 +1,30 @@
+#-----------------------------------------------------------------------
+#			CS 496 - Mobile and Cloud Software Development
+#				Oregon State University - Summer 2016
+#                     How-To-Guide & Final Project
+#
+# Author: James Pool
+# ONID: 932664412
+# OSU Email: poolj@oregonstate.edu
+# Date: 7 August 2016
+#
+# Application Name: poolj-cs496-colors
+# Filename: app.yaml
+# Description: Google Application Engine (GAE) settings file
+#-----------------------------------------------------------------------
+
+application: poolj-cs496-colors
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: main.application
+  
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
